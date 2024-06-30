@@ -1,5 +1,26 @@
 Greystone Labs Backend Code Challenge
 
+## Loan Amoritization API
+
+## setup 
+1. Install Dependencies
+    ```pip install -r requirements.txt```
+
+2. Run 
+    ```uvicorn app.main:app --reload```
+
+
+3. Access docs
+    http://127.0.0.1:8000/docs
+
+
+
+
+
+
+
+
+######################################################################
 
 ## FASTAPI notes 
 - https://fastapi.tiangolo.com
@@ -9,7 +30,8 @@ Greystone Labs Backend Code Challenge
 - install uvicorn (async server implemenation)
 - type hints -> declare type lol
 - concurrency -> await ... 
-
+- hot reload: uvicorn main:app --reload
+- http://127.0.0.1:8000/docs -> automatic docs
 
 
 

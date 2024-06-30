@@ -4,5 +4,5 @@ app = FastAPI()
 
 
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
+async def read_root():
+    return {"message": "Welcome to the Loan Amortization API"}
