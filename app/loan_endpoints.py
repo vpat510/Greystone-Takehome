@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from . import models, schemas, database
+from .amortization import calculate_amortization_schedule
 
 # Create router for loan endpoints
 router = APIRouter()
@@ -56,3 +57,10 @@ def delete_loan(loan_id: int, db: Session = Depends(get_db)):
     db.commit()
     return db_loan
 
+# calculates the amortization schedule for a loan based on the principal, annual interest rate, and loan term in months.
+# calls the endpoint & returns the schedule
+@router.get("/loans/{loan_id}/amortization", response_model=list[schemas.LoanSchedule])
+def get_amortization_schedule(loan_id: int, db: Session = Depends(get_db)):
+    loan = get_loan_by_id(loan_id, db)
+    schedule = calculate_amortization_schedule(loan.amount, loan.annual_interest_rate, loan.loan_term_months)
+    return schedule
