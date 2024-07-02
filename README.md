@@ -14,10 +14,23 @@ Greystone Labs Backend Code Challenge
     http://127.0.0.1:8000/docs
 
 
+###################################################################
+ ## Tests
 
+ 1. To Run all tests
+    ```pytest```
 
+2. To run specific tests
+        ```pytest tests/test_main.py```
+        ```pytest tests/test_amortization.py```
 
+3. Might need to set PYTHONPATH. You need to set the PYTHONPATH to the root of your project directory so that Python can find the app module.
+run on terminal:       
+    ```export PYTHONPATH=.```
 
+4. MISC 
+     pytest for running tests
+    httpx for making HTTP requests to the FastAPI endpoints.
 
 
 ######################################################################
